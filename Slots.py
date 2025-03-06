@@ -33,7 +33,34 @@ def Wins(slot,balance):
 
 
 def main():
-    pass
+    global balance
+    balance =0
+    reference = True
+    payout()
+    while reference:
+        print("1. play slot \n2. deposit \n3. check balance \n4. check payout \n5. exit")
+        choice = int(input("select your choice: "))
+        match choice:
+            case 1:
+                balance =slots(balance)
+            case 2: 
+                print(f"Current Balance ${balance}")
+                amount = int(input("enter amount: "))
+                if amount < 0:
+                    print("enter an amount greater than 0")
+                else:
+                    balance+=amount
+                    print(f"${amount} added sucessfully")
+            case 3:
+                print(f"the current balance is ${balance}")
+            case 4:
+                payout()
+            case 5:
+                reference = False
+                print("Thanks for playing")
+                print("Come back soon!!")
+            case _:
+                print("enter a valid choice!")
 
 if __name__ == "__main__":
     main()       
