@@ -18,7 +18,18 @@ def slots(balance):
     return balance
 
 def Wins(slot,balance):
-    pass
+    if slot[0]==slot[1]==slot[2]:
+        balance +=1000
+        print("Congratulations !!!!!")
+        print("you won the jackpot")
+        print(f"$1000 has been added to your balance")
+    elif slot[0]==slot[1] or slot[2]==slot[1] or slot[0]==slot[2]:
+            balance+= 50
+            print("you won Minor win!!")
+            print("$50 has been added to your balance")
+    else:
+        print("better luck next time")
+    return balance
 
 
 def main():
